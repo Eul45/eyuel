@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         sections.forEach((section, index) => {
             const rect = section.getBoundingClientRect();
             
-            // Determine if section is active (in the viewport center)
-            if (rect.top <= windowHeight * 0.4 && rect.bottom >= windowHeight * 0.4) {
+            // Determine if section is active (more visible in viewport)
+            if (rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.3) {
                 newActiveIndex = index;
             }
         });
@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 prevSection.classList.add('section-exiting');
                 setTimeout(() => {
                     prevSection.classList.remove('active-section', 'section-exiting');
-                }, 600);
+                }, 800); // Increased duration for smoother transition
             }
             
             // Animate entrance for new section
             newSection.classList.add('section-entering', 'active-section');
             setTimeout(() => {
                 newSection.classList.remove('section-entering');
-            }, 600);
+            }, 800); // Increased duration for smoother transition
             
             currentActiveIndex = newActiveIndex;
         }
@@ -93,7 +93,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Enhanced section animations with IntersectionObserver
     function initEnhancedSectionAnimations() {
         const animatedItems = document.querySelectorAll('.animate-item');
+        const allSections = document.querySelectorAll('.section-animate');
         
+        // First observe sections for visibility
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active-section');
+                } else if (scrollingDirection === 'up') {
+                    // Only remove the active class when scrolling up and section is no longer visible
+                    entry.target.classList.remove('active-section');
+                }
+            });
+        }, { 
+            threshold: 0.1, // Lower threshold for earlier detection
+            rootMargin: '0px 0px -10% 0px' // Trigger slightly before the section is in view
+        });
+        
+        // Observe all sections
+        allSections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+        
+        // Then handle individual animated items
         const itemObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -157,8 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }, { 
-            threshold: 0.2,
-            rootMargin: '0px 0px -15% 0px' // Start animation a bit before element enters viewport
+            threshold: 0.1,
+            rootMargin: '0px 0px -10% 0px' // Start animation a bit before element enters viewport
         });
 
         // Observe all animated items
@@ -192,20 +214,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Mobile menu
+    // Mobile menu with improved touch experience
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        
+        // Prevent body scrolling when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'visible';
+        }
     });
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    navLinksItems.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            document.body.style.overflow = 'visible';
         });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && 
+            !navLinks.contains(e.target) && 
+            !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = 'visible';
+        }
     });
 
     // Contact form submission
@@ -263,4 +305,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Add touch event handlers for better mobile experience
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.project-card, .skill-category, .certificate-card, .social-link').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            }, {passive: true});
+            
+            item.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('touch-active');
+                }, 300);
+            }, {passive: true});
+        });
+    }
 });
