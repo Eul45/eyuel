@@ -1,0 +1,419 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyuel Engida - Tech Innovator & Engineer</title>
+
+    <!-- Meta tags for SEO and Social Media previews -->
+    <meta property="og:title" content="Eyuel Engida - Portfolio">
+    <meta property="og:description" content="Learn more about Eyuel Engida, a passionate developer and innovator.">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/Eul45/EyuAppsmian2/refs/heads/main/images/eyuel.jpg">
+    <meta property="og:url" content="https://eyuelprofile.neocities.org/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Eyuel Engida - Portfolio">
+    <meta name="twitter:description" content="Learn more about Eyuel Engida, a passionate developer and innovator.">
+    <meta name="twitter:image"
+        content="https://raw.githubusercontent.com/Eul45/EyuAppsmian2/refs/heads/main/images/eyuel.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://eyuapps.neocities.org/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-container">
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+            <div class="cyber-circle"></div>
+            <div class="loading-logo">
+                <img src="logo.png" alt="Eyuel Engida Logo" width="80" height="80"
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Section Indicator -->
+    <div class="section-indicator">
+        <div class="indicator-dot" data-section="Home"></div>
+        <div class="indicator-dot" data-section="About"></div>
+        <div class="indicator-dot" data-section="Projects"></div>
+        <div class="indicator-dot" data-section="Skills"></div>
+        <div class="indicator-dot" data-section="Certificates"></div>
+        <div class="indicator-dot" data-section="Contact"></div>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo" style="margin-top: 10px;">
+                <div class="logo-img">
+                    <img src="logo.png" alt="Eyuel Engida Logo" width="50" height="50">
+                </div>
+                <span class="logo-text">EE</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero section-animate">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-item" data-animation="fade-in-left">
+                    <div class="profile-image-container">
+                        <img src="profile5.jpg" alt="Eyuel Engida" class="profile-image">
+                    </div>
+                    <h1>Eyuel Engida</h1>
+                    <p>Aspiring Engineer & Innovator in Tech</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">View My Work</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image animate-item" data-animation="fade-in-right">
+                    <svg viewBox="0 0 200 200" width="100%" height="auto">
+                        <!-- Animated Circular Background -->
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--secondary)" />
+                                <stop offset="100%" stop-color="var(--accent)" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Outer circle -->
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="url(#gradient)" stroke-width="2"
+                            opacity="0.1">
+                            <animate attributeName="r" values="90;95;90" dur="3s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Middle circle -->
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="url(#gradient)" stroke-width="3"
+                            opacity="0.2">
+                            <animate attributeName="r" values="70;75;70" dur="4s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" />
+                        </circle>
+                        <!-- Inner circle -->
+                        <circle cx="100" cy="100" r="50" fill="none" stroke="url(#gradient)" stroke-width="4"
+                            opacity="0.3">
+                            <animate attributeName="r" values="50;55;50" dur="5s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="0.3;0.5;0.3" dur="5s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Core circle with gradient -->
+                        <circle cx="100" cy="100" r="40" fill="url(#gradient)" opacity="0.6">
+                            <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2s" repeatCount="indefinite" />
+                        </circle>
+
+                        <!-- Centered "E" with pulsing effect -->
+                        <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-size="60" fill="#ffffff"
+                            font-weight="bold" font-family="Arial, sans-serif">
+                            E
+                            <animate attributeName="font-size" values="60;62;60" dur="2s" repeatCount="indefinite" />
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section-animate">
+        <div class="container">
+            <h2 class="section-title animate-item" data-animation="fade-in-down">About Me</h2>
+            <div class="about-content">
+                <div class="about-text animate-item" data-animation="fade-in-left">
+                    <p>Welcome to my digital space! I'm passionate about technology and innovation. With a strong
+                        foundation in mobile development and web technologies, I create solutions that make a
+                        difference.</p>
+                    <p>I specialize in creating intuitive mobile applications and user-friendly web experiences. My goal
+                        is to build technology that improves daily life and solves real problems.</p>
+                </div>
+
+                <div class="website-preview animate-item" data-animation="fade-in-right">
+                    <h3>My Personal Website</h3>
+                    <p>Check out my other projects and work:</p>
+                    <a href="https://eyuapps.neocities.org/" target="_blank" class="cta-button">
+                        <i class="fas fa-globe"></i> Visit EyuApps
+                    </a>
+                </div>
+            </div>
+
+            <div class="social-links animate-item" data-animation="fade-in-up">
+                <a href="https://t.me/Eul_zzz" target="_blank" title="Telegram" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/eyuel-engida-77155a317" target="_blank" title="LinkedIn"
+                    class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61557995417592" target="_blank" title="Facebook"
+                    class="social-link">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/eul4525" target="_blank" title="Twitter" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/Eul45" target="_blank" title="GitHub" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section-animate">
+        <div class="container">
+            <h2 class="section-title animate-item" data-animation="fade-in-down">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card animate-item" data-animation="zoom-in" data-delay="0">
+                    <div class="project-icon">
+                        <i class="fas fa-book-bible"></i>
+                    </div>
+                    <h3>Amharic Bible Verse</h3>
+                    <p>A comprehensive Amharic Bible verse application with daily readings and study tools.</p>
+                    <a href="https://ethiopian-bible-verse.en.uptodown.com/android" class="animated-button"
+                        target="_blank">
+                        <span>View Project</span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="project-card animate-item" data-animation="zoom-in" data-delay="200">
+                    <div class="project-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Quiz App</h3>
+                    <p>An interactive quiz application to test your knowledge across various subjects.</p>
+                    <a href="https://com-eulzz-quizz.en.uptodown.com/android" class="animated-button" target="_blank">
+                        <span>View Project</span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="project-card animate-item" data-animation="zoom-in" data-delay="400">
+                    <div class="project-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <h3>Daily Quotes</h3>
+                    <p>Get inspired daily with quotes to start your day positively and stay motivated!</p>
+                    <a href="https://mini-daily-quotes.en.uptodown.com/android" class="animated-button" target="_blank">
+                        <span>View Project</span>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section-animate">
+        <div class="container">
+            <h2 class="section-title animate-item" data-animation="fade-in-down">Technical Skills</h2>
+            <div class="skill-categories">
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="0">
+                    <h3>Frontend</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="95%"></div>
+                    </div>
+                    <p>HTML, CSS, JavaScript, TypeScript</p>
+                </div>
+
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="100">
+                    <h3>Mobile Development</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85%"></div>
+                    </div>
+                    <p>React Native, Expo, Java</p>
+                </div>
+
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="200">
+                    <h3>Backend</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="70%"></div>
+                    </div>
+                    <p>Node.js, Firebase</p>
+                </div>
+
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="300">
+                    <h3>Tools</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80%"></div>
+                    </div>
+                    <p>Git, EAS, Photoshop, Figma</p>
+                </div>
+
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="400">
+                    <h3>Frameworks</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90%"></div>
+                    </div>
+                    <p>React Native, Expo, Spring Boot</p>
+                </div>
+
+                <div class="skill-category animate-item" data-animation="fade-in-up" data-delay="500">
+                    <h3>Other Skills</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75%"></div>
+                    </div>
+                    <p>UI/UX Design, OOP, Problem Solving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates section-animate">
+        <div class="container">
+            <h2 class="section-title animate-item" data-animation="fade-in-down">Certifications</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card animate-item" data-animation="flip-in" data-delay="0">
+                    <div class="certificate-icon">
+                        <img src="images.png" alt="Certificate" style="width: 48px; height: 48px; object-fit: contain;">
+                    </div>
+                    <h3 class="certificate-title">Data Analysis Fundamentals</h3>
+                    <p>Udacity</p>
+                    <a href="https://www.udacity.com/certificate/e/b3fa2532-abe4-11ef-adb1-83635f014422" target="_blank"
+                        class="certificate-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+
+                <div class="certificate-card animate-item" data-animation="flip-in" data-delay="200">
+                    <div class="certificate-icon">
+                        <img src="images.png" alt="Certificate" style="width: 48px; height: 48px; object-fit: contain;">
+                    </div>
+                    <h3 class="certificate-title">Advanced Web Development</h3>
+                    <p>Udacity</p>
+                    <a href="https://www.udacity.com/certificate/e/a533081e-4da4-11ef-b1a2-27e471d9bb2d" target="_blank"
+                        class="certificate-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+
+                <div class="certificate-card animate-item" data-animation="flip-in" data-delay="400">
+                    <div class="certificate-icon">
+                        <img src="images.png" alt="Certificate" style="width: 48px; height: 48px; object-fit: contain;">
+                    </div>
+                    <h3 class="certificate-title">Mobile App Development</h3>
+                    <p>Udacity</p>
+                    <a href="https://www.udacity.com/certificate/e/08e347b8-a02d-11ef-b475-ffe960d45cab" target="_blank"
+                        class="certificate-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Certificate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-animate">
+        <div class="container">
+            <h2 class="section-title animate-item" data-animation="fade-in-down">Contact Me</h2>
+            <div class="profile-and-form">
+                <!-- Profile Image -->
+                <div class="profile animate-item" data-animation="fade-in-left">
+                    <img src="profile7.jpg" alt="Eyuel Engida" class="profile-icon">
+                    <div class="contact-info">
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contact-form" class="animate-item" data-animation="fade-in-right">
+                    <div class="form-group">
+                        <label for="name">Your name:</label>
+                        <input type="text" name="name" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your email:</label>
+                        <input type="email" name="email" placeholder="Enter your email address" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your message:</label>
+                        <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn-submit" type="submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success and Failure Messages -->
+                <div id="alerts-container">
+                    <div id="success-message" class="alert alert-success d-none">
+                        <i class="fas fa-check-circle"></i> Message sent successfully!
+                    </div>
+                    <div id="failure-message" class="alert alert-danger d-none">
+                        <i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--secondary)" />
+                                <stop offset="100%" stop-color="var(--accent)" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="var(--bg)" stroke="url(#footer-gradient)"
+                            stroke-width="3" />
+                        <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-size="30" fill="var(--accent)"
+                            font-weight="bold">EE</text>
+                    </svg>
+                </div>
+                <div class="footer-text">
+                    <p class="footer-title">Crafted with by Eyuel Engida</p>
+                    <p>&copy; <span id="currentYear"></span> - All rights reserved.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#certificates">Certificates</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="back-to-top">
+                    <a href="#home" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
